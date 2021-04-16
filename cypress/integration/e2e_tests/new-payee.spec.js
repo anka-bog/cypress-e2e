@@ -6,10 +6,11 @@ describe('New Payee Test', () => {
       const username = user.id
       const password = user.pwd
 
-      cy.get('#user_login').type(username)
-      cy.get('#user_password').type(password)
-      cy.get('#user_remember_me').click()
-      cy.contains('Sign in').click()
+      //cy.get('#user_login').type(username)
+      //cy.get('#user_password').type(password)
+      //cy.get('#user_remember_me').click()
+      //cy.contains('Sign in').click() -> these for were moved into command and can be replaced with what we have below
+      cy.login(username, password)
     })
     cy.get('ul.nav-tabs').should('be.visible')
   })
